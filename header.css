@@ -1,0 +1,105 @@
+/* HEADER */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  background:#491919;
+  position:relative;
+}
+
+.logo{
+  height:55px;
+}
+
+/* MENU */
+.nav-links{
+  display:flex;
+  gap:25px;
+}
+
+.nav-links li a{
+  color:white;
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:5px;
+}
+
+.nav-links li a:hover{
+  background:#ffcc00;
+  color:black;
+}
+
+/* DROPDOWN */
+.dropdown{
+  position:relative;
+}
+
+.dropdown-content{
+  display:none;
+  position:absolute;
+  top:35px;
+  left:0;
+  background:#491919;
+  min-width:150px;
+  border-radius:6px;
+  z-index:9999;
+}
+
+.dropdown-content li a{
+  display:block;
+  padding:10px;
+}
+
+/* DESKTOP */
+@media(min-width:901px){
+  .dropdown:hover .dropdown-content{
+    display:block;
+  }
+}
+
+/* HAMBURGER */
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  color:white;
+  cursor:pointer;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    top:70px;
+    right:20px;
+    background:#491919;
+    width:220px;
+    padding:20px;
+    border-radius:10px;
+  }
+
+  .nav-links.show{
+    display:flex;
+  }
+
+  /* MOBILE DROPDOWN */
+  .dropdown-content{
+    position:relative;
+    top:0;
+  }
+
+  .dropdown.active .dropdown-content{
+    display:block;
+  }
+
+  .dropdown:hover .dropdown-content{
+    display:none;
+  }
+}
